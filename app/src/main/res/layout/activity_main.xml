@@ -14,8 +14,8 @@
         android:layout_marginRight="20dp"
         android:text="@string/sign_in"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/editTextTextPassword3"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword3"
+        app:layout_constraintEnd_toEndOf="@+id/etxPassword"
+        app:layout_constraintTop_toBottomOf="@+id/etxPassword"
         app:layout_constraintVertical_bias="0.118" />
 
     <Button
@@ -26,8 +26,8 @@
         android:layout_marginLeft="20dp"
         android:text="@string/sign_up"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPassword3"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword3"
+        app:layout_constraintStart_toStartOf="@+id/etxPassword"
+        app:layout_constraintTop_toBottomOf="@+id/etxPassword"
         app:layout_constraintVertical_bias="0.118" />
 
     <TextView
@@ -42,7 +42,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress2" />
+        app:layout_constraintTop_toBottomOf="@+id/etxEmail" />
 
     <TextView
         android:id="@+id/textView"
@@ -57,10 +57,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        app:layout_constraintTop_toBottomOf="@+id/imgLogo" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/imgLogo"
         android:layout_width="339dp"
         android:layout_height="143dp"
         android:layout_marginTop="32dp"
@@ -70,7 +70,7 @@
         app:srcCompat="@drawable/trivia_logo" />
 
     <EditText
-        android:id="@+id/editTextTextEmailAddress2"
+        android:id="@+id/etxEmail"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -84,7 +84,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <EditText
-        android:id="@+id/editTextTextPassword3"
+        android:id="@+id/etxPassword"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"

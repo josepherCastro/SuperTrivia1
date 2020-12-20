@@ -8,5 +8,28 @@
     <string name="email">E-mail</string>
     <string name="submit">Submit</string>
     <string name="cancel">Cancel</string>
+    <string name="login_error">Email or Password isn\'t correct.</string>
+    <string name="registry_empty">Complete the empty fields.</string>
+    <string name="registry_password_match">Passwords don\'t match!</string>
+    <string name="registry_success_title">Registration Status:</string>
+    <string name="registry_success_msg">Successfully Registered User.</string>
+    <string name="difficulty_game">Choose a difficulty level</string>
+    <string name="difficulty_game_easy">Easy</string>
+    <string name="difficulty_game_medium">Medium</string>
+    <string name="difficulty_game_hard">Hard</string>
+    <string name="category_game">Choose a category:</string>
+    <string name="bt_nav_home">Home</string>
+    <string name="bt_nav_play_game">To Play</string>
+    <string name="bt_nav_ranking">Ranking</string>
+    <string name="game_running">Game running…</string>
+    <string name="error_category">ERROR - Choose a category.</string>
+    <string name="game_next">Next</string>
+    <string name="game_finish">End game</string>
+    <string name="game_correct">Correct</string>
+    <string name="game_incorrect">Incorrect</string>
+    <string name="game_select_alternative">Select correct alternative:</string>
+
     <string name="msg_sign_up">To play the super trivia, you must register. Sign up and good game!</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
