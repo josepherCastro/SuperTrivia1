@@ -7,7 +7,11 @@
     <fragment
         android:id="@+id/rankingFragment"
         android:name="br.edu.ifpr.josepher.supertrivia1.fragment.RankingFragment"
-        android:label="RankingFragment" />
+        android:label="RankingFragment" >
+        <action
+            android:id="@+id/action_rankingFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
     <fragment
         android:id="@+id/mainFragment"
         android:name="br.edu.ifpr.josepher.supertrivia1.fragment.MainFragment"
@@ -22,5 +26,21 @@
     <fragment
         android:id="@+id/playGameFragment2"
         android:name="br.edu.ifpr.josepher.supertrivia1.fragment.PlayGameFragment"
-        android:label="PlayGameFragment" />
+        android:label="PlayGameFragment" >
+        <action
+            android:id="@+id/action_playGameFragment2_to_endGameFragment"
+            app:destination="@id/endGameFragment" />
+        <action
+            android:id="@+id/action_playGameFragment2_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/endGameFragment"
+        android:name="br.edu.ifpr.josepher.supertrivia1.fragment.EndGameFragment"
+        android:label="fragment_end_game"
+        tools:layout="@layout/fragment_end_game" >
+        <action
+            android:id="@+id/action_endGameFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
 </navigation>

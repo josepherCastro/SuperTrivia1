@@ -7,7 +7,6 @@ import br.edu.ifpr.josepher.supertrivia1.model.user.UserLogin
 import retrofit2.Call
 import retrofit2.http.*
 
-
 interface UserService {
     @GET("/users")
     fun getAll(): Call<List<User>>

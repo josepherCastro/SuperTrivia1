@@ -7,5 +7,4 @@ class Question(
     val difficulty: String,
     val category: Category,
     val answers: List<Answer>
-) {
-}
+)

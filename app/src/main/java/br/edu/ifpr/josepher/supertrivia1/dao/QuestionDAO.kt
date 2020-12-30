@@ -29,12 +29,12 @@ class QuestionDAO {
             ) {
 
                 if (!response.isSuccessful) {
-                    Log.e("question", response.body().toString())
+                    Log.e("question1", response.body().toString())
 
                 } else {
                     val question = response.body()!!
 
-                    Log.e("question", response.body()!!.status)
+                    Log.e("question2", response.body()!!.status)
                     Log.e("array", response.body()!!.data?.problem?.answers.toString())
 
                     finished(question.data!!)

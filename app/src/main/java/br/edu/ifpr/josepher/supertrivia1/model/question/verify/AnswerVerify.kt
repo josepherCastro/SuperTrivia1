@@ -6,5 +6,4 @@ class AnswerVerify(
     val status: String,
     val correct_answer: Answer,
     val score: Int
-) {
-}
+)

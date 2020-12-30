@@ -16,7 +16,7 @@ class RankingDAO {
         .baseUrl(url).addConverterFactory(GsonConverterFactory.create())
         .build()
 
-    val service = retrofit.create(RankingService::class.java)!!
+    val service = retrofit.create(RankingService::class.java)
 
     fun getAll(finished: (category: List<RankingUser>) -> Unit) {
 

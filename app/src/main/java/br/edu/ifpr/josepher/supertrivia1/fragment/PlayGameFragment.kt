@@ -24,8 +24,8 @@ import kotlinx.android.synthetic.main.fragment_play_game.view.*
 class PlayGameFragment : Fragment() {
 
     lateinit var answerAdapter: AnswerAdapter
-    var dao = GameDAO()
-    var daoQ = QuestionDAO()
+    var daoGAME = GameDAO()
+    var daoQuestions = QuestionDAO()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -73,7 +73,7 @@ class PlayGameFragment : Fragment() {
             var question: QuestionData
 
             if (token != null) {
-                daoQ.existQuestion(token) {
+                daoQuestions.existQuestion(token) {
 
 
                     alertDialog.dismiss()
@@ -93,6 +93,7 @@ class PlayGameFragment : Fragment() {
             }
 
         }
+
         returnView.btNext.setOnClickListener {
             nextToQuestion(
                 token,
@@ -112,7 +113,7 @@ class PlayGameFragment : Fragment() {
 
             buildII.setPositiveButton(getString(R.string.game_next)) { dialog, _ ->
 
-                daoQ.nextQuestion(token){
+                daoQuestions.nextQuestion(token){
                     val bundle = Bundle()
 
                     val gson = Gson()
@@ -129,7 +130,7 @@ class PlayGameFragment : Fragment() {
             }
             buildII.setNegativeButton(getString(R.string.game_finish)){ dialog, _ ->
 
-                dao.endGame(token){
+                daoGAME.endGame(token){
                     findNavController().navigate(R.id.mainFragment)
                 }
                 dialog.dismiss()
@@ -140,7 +141,7 @@ class PlayGameFragment : Fragment() {
 
             alertDialog.show()
 
-            daoQ.answerQuestion(answer.order, token) {
+            daoQuestions.answerQuestion(answer.order, token) {
                 alertDialog.dismiss()
 
                 if (it.answer.status == "incorrect") {

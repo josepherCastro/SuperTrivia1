@@ -18,7 +18,7 @@ class UserDAO {
         .baseUrl(url).addConverterFactory(GsonConverterFactory.create())
         .build()
 
-    val service = retrofit.create(UserService::class.java)!!
+    val service = retrofit.create(UserService::class.java)
 
     fun getAll(finished: (users: List<User>) -> Unit) {
 

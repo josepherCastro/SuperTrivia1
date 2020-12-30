@@ -1,5 +1,4 @@
 package br.edu.ifpr.josepher.supertrivia1.model.user
-
 import com.google.gson.annotations.SerializedName
 
 data class User(
@@ -9,9 +8,6 @@ data class User(
     var token: String?
 ) {
     var id: Long? = null
-
     override fun equals(other: Any?) = other is User && this.id == other.id
-
-
 }
 

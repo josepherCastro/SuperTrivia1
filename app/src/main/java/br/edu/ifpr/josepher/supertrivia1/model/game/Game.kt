@@ -5,5 +5,4 @@ class Game(
     val status: String,
     val stared_at: String,
     val score: Int
-) {
-}
+)

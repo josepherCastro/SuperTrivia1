@@ -3,7 +3,6 @@ package br.edu.ifpr.josepher.supertrivia1.model
 class Difficulty(
     private val lvl: Int
 ) {
-
     val difficulty: String
         get() = when (lvl) {
             1 -> {

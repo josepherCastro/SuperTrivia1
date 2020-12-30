@@ -18,7 +18,7 @@ class GameDAO {
         .baseUrl(url).addConverterFactory(GsonConverterFactory.create())
         .build()
 
-    val service = retrofit.create(GameService::class.java)!!
+    val service = retrofit.create(GameService::class.java)
 
     fun startGame(token: String, finished: ((Game)) -> Unit) {
 

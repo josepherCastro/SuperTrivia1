@@ -5,5 +5,4 @@ class EndGame(
     val started_at: String,
     val finished_at: String,
     val score: Int
-) {
-}
+)

@@ -16,6 +16,4 @@ interface QuestionService {
 
     @POST("/problems/answer?")
     fun answerQuestion(@Header("Authorization") token: String, @Query("answer") answer: Int): Call<VerifyCallBack>
-
-
 }

@@ -5,8 +5,6 @@ import retrofit2.Call
 import retrofit2.http.GET
 
 interface CategotyService {
-
     @GET("/categories")
     fun getAll(): Call<CategoryCallBack>
-
 }

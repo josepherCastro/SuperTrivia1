@@ -44,7 +44,6 @@ class MainFragment : Fragment() {
         returnView.rcListCategories.layoutManager =
             LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
 
-
         returnView.fabPlayGame.setOnClickListener {
             setSetup(
                 adapter.getCategory(),
@@ -53,13 +52,13 @@ class MainFragment : Fragment() {
         }
         return returnView
     }
-    fun onRadioButtonClicked(view: View): Int {
-        if (view is RadioButton) {
+    private fun onRadioButtonClicked(viewRadio: View): Int {
+        if (viewRadio is RadioButton) {
             // Is the button now checked?
-            val checked = view.isChecked
+            val checked = viewRadio.isChecked
 
             // Check which radio button was clicked
-            when (view.getId()) {
+            when (viewRadio.getId()) {
                 R.id.rBtEasy ->
                     if (checked) {
                         return 1
@@ -91,7 +90,6 @@ class MainFragment : Fragment() {
             if (token != null) {
 
                 val build: AlertDialog.Builder = AlertDialog.Builder(activity)
-//                build.setView(R.layout.screen_load)
 
                 build.setCancelable(false)
 

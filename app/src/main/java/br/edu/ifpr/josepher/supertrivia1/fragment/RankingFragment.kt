@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import br.edu.ifpr.josepher.supertrivia1.R
 import br.edu.ifpr.josepher.supertrivia1.adapter.RankingAdapter
+import kotlinx.android.synthetic.main.fragment_ranking.view.*
 
 class RankingFragment : Fragment() {
     private lateinit var adapter : RankingAdapter
@@ -20,11 +21,9 @@ class RankingFragment : Fragment() {
         val returnView = inflater.inflate(R.layout.fragment_ranking, container, false)
 
         adapter = RankingAdapter()
-        returnView.rc.adapter = adapter
+        returnView.rcListScore.adapter = adapter
 
-        view.rcRanking.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
-        return view
-    }
-
+        returnView.rcListScore.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
+        return returnView
     }
 }

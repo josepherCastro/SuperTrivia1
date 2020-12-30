@@ -28,6 +28,13 @@
     <string name="game_correct">Correct</string>
     <string name="game_incorrect">Incorrect</string>
     <string name="game_select_alternative">Select correct alternative:</string>
+    <string name="ranking_score">Score</string>
+    <string name="ranking_name">Name</string>
+    <string name="start_game">Start Game in Home Page !</string>
+    <string name="report">Report</string>
+    <string name="started">Started At: </string>
+    <string name="finished">Finished At: </string>
+    <string name="endScore">Score: </string>
 
     <string name="msg_sign_up">To play the super trivia, you must register. Sign up and good game!</string>
     <!-- TODO: Remove or change this placeholder text -->

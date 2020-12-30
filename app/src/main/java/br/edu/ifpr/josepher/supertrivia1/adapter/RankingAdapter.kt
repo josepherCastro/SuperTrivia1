@@ -21,7 +21,7 @@ class RankingAdapter() : RecyclerView.Adapter<RankingAdapter.ViewHolder>() {
         dao.getAll {
             rankings = it
 
-            Log.e("jsonapi", rankings.toString())
+            Log.e("API_RETURN", rankings.toString())
             notifyDataSetChanged()
         }
     }

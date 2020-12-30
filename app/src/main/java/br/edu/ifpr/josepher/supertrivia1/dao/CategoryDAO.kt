@@ -16,7 +16,7 @@ class CategoryDAO {
         .baseUrl(url).addConverterFactory(GsonConverterFactory.create())
         .build()
 
-    val service = retrofit.create(CategotyService::class.java)!!
+    val service = retrofit.create(CategotyService::class.java)
 
     fun getAll(finished: (category: List<Category>) -> Unit) {
 
@@ -24,15 +24,15 @@ class CategoryDAO {
             override fun onResponse(call: Call<CategoryCallBack>, callBack: Response<CategoryCallBack>) {
 
                 if(!callBack.isSuccessful){
-                    Log.e("RETORNO_API", callBack.body().toString())
+                    Log.e("RETORNO_API1", callBack.body().toString())
                 }else{
                     val categories = callBack.body()!!
-                    Log.e("RETORNO_API", categories.toString())
+                    Log.e("RETORNO_API2", categories.toString())
                     categories.data?.let { finished(it.categories) }
                 }
             }
             override fun onFailure(call: Call<CategoryCallBack>, t: Throwable) {
-                Log.e("RETORNO_API",t.toString())
+                Log.e("RETORNO_API3",t.toString())
             }
         })
     }

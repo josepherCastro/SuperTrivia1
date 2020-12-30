@@ -4,6 +4,4 @@ class UserInput(
     var email: String,
     var name: String,
     var password: String,
-) {
-
-}
+)

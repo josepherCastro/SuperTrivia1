@@ -8,7 +8,6 @@ import android.net.ConnectivityManager
 class ConnectivityReceiver: BroadcastReceiver() {
 
     override fun onReceive(context: Context?, intent: Intent?) {
-
         if (connectivityReceiverListener != null) {
             connectivityReceiverListener!!.onNetworkConnectionChanged(isConnectedOrConnecting(context!!))
         }
