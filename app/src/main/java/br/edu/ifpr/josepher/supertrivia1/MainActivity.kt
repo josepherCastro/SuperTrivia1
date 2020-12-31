@@ -20,6 +20,17 @@ class MainActivity : AppCompatActivity(), ConnectivityReceiver.ConnectivityRecei
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        val sharedPref = this?.getSharedPreferences("user", Context.MODE_PRIVATE)
+
+        if (sharedPref != null) {
+            val email = sharedPref.getString("email", "")
+            val password = sharedPref.getString("password", "")
+//            val token = sharedPref.getString("token", "")
+//            val userLogin = UserLogin(email!!, password!!)
+            signIn(email!!, password!!, false)
+
+        }
+
         registerReceiver(
                 ConnectivityReceiver(),
                 IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION)
@@ -51,7 +62,10 @@ class MainActivity : AppCompatActivity(), ConnectivityReceiver.ConnectivityRecei
                         }
                     }
                     Log.i("LOGIN", it.toString())
-                    startActivity(Intent(this, Trivia::class.java))
+                    val intent = Intent(this, Trivia::class.java)
+                    intent.flags =
+                            Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                    startActivity(intent)
                 }
             } catch (e: Exception) {
                 Toast.makeText(this, R.string.login_error, Toast.LENGTH_SHORT).show()

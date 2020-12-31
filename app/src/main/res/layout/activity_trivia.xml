@@ -25,6 +25,7 @@
             app:defaultNavHost="true"
             app:navGraph="@navigation/nav_graph"
             tools:layout="@layout/fragment_main" />
+
     </FrameLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -43,5 +44,18 @@
         app:menu="@menu/menu_botton">
 
     </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabExit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginBottom="72dp"
+        android:clickable="true"
+        app:backgroundTint="#673AB7"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@android:drawable/presence_busy" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
