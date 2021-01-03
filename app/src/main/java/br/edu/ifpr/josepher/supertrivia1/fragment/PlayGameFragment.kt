@@ -147,15 +147,12 @@ class PlayGameFragment : Fragment() {
                 if (it.answer.status == "incorrect") {
                     showUser.setTitle(getString(R.string.game_incorrect))
                 } else {
-                    showUser.setTitle(getString(R.string.game_incorrect))
+                    showUser.setTitle(getString(R.string.game_correct))
                 }
+
+                showUser.setMessage(getString(R.string.endScore) + " " + it.answer.score.toString())
                 showUser.setCancelable(false)
                 showUser.show()
-
-                Log.i("answer", it.answer.correct_answer.toString())
-                Log.i("answer", it.answer.status)
-
-
             }
         } else {
             Toast.makeText(activity, getString(R.string.game_select_alternative), Toast.LENGTH_SHORT)

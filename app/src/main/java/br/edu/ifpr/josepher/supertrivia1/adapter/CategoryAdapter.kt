@@ -44,7 +44,13 @@ class CategoryAdapter(): RecyclerView.Adapter<CategoryAdapter.ViewHolder>() {
         }
     }
 
-    override fun getItemViewType(position: Int) = R.layout.item_category
+    override fun getItemViewType(position: Int): Int {
+        return if (select && position == categorySelect) {
+            R.layout.item_category_selected
+        } else {
+            R.layout.item_category
+        }
+    }
 
     override fun getItemCount() = categories.size
 
@@ -56,14 +62,16 @@ class CategoryAdapter(): RecyclerView.Adapter<CategoryAdapter.ViewHolder>() {
                 select = !select
                 val position = categories.indexOf(category)
                 categorySelect = position
-                Log.v("category", category.toString())
+
                 notifyItemChanged(position)
             }
         }
     }
-    fun getCategory(): Category {
-        return categories[categorySelect]
-        Log.v("category", categories[categorySelect].toString())
+    fun getCategory(): Category? {
+        if (select) {
+            return categories[categorySelect]
+        }
+        return null
     }
 
 

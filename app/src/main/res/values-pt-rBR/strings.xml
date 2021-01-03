@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Super Trivia</string>
+    <string name="user_name">Nome do usuário</string>
+    <string name="password">Senha</string>
+    <string name="confirm_password">Confirme sua senha</string>
+    <string name="sign_in">assinar em</string>
+    <string name="sign_up">inscrever-se</string>
+    <string name="email">E-mail</string>
+    <string name="submit">Enviar</string>
+    <string name="cancel">Cancelar</string>
+    <string name="login_error">Email ou senha incorretos.</string>
+    <string name="registry_empty">Preencha os campos vazios.</string>
+    <string name="registry_password_match">As senhas não correspondem!</string>
+    <string name="registry_success_title">Status de registro:</string>
+    <string name="registry_success_msg">Usuário registrado com sucesso.</string>
+    <string name="difficulty_game">Escolha um nível de dificuldade</string>
+    <string name="difficulty_game_easy">Fácil</string>
+    <string name="difficulty_game_medium">Médio</string>
+    <string name="difficulty_game_hard">Difícil</string>
+    <string name="category_game">Escolha uma categoria:</string>
+    <string name="bt_nav_home">Casa</string>
+    <string name="bt_nav_play_game">Jogar</string>
+    <string name="bt_nav_ranking">Ranking</string>
+    <string name="game_running">Jogo em execução ...</string>
+    <string name="error_category">ERROR - Escolha uma categoria.</string>
+    <string name="game_next">Próxima</string>
+    <string name="game_finish">Fim do jogo</string>
+    <string name="game_correct">Correto</string>
+    <string name="game_incorrect">Incorreto</string>
+    <string name="game_select_alternative">Selecione a alternativa correta:</string>
+    <string name="ranking_score">Ponto</string>
+    <string name="ranking_name">Nome</string>
+    <string name="start_game">Comece o jogo na página inicial!</string>
+    <string name="report">Relatório</string>
+    <string name="started">Começou às:</string>
+    <string name="finished">Terminado em:</string>
+    <string name="endScore">Ponto:</string>
+    <string name="msg_sign_up">Para jogar as super curiosidades, você deve se registrar. Inscreva-se e bom jogo!</string>
+    <string name="hello_blank_fragment">Olá fragmento em branco</string>
+    <string name="logout_trivia_info">Você está preste a desconectar-se da sua conta do App Super Trivia, tem serteza que deseja fazer isso? Se não quer fazer isso é só ir para Home. Se um dia desejar votar use seu email e senha cadastrados para seguir com o seu progresso.</string>
+    <string name="logout_trivia_confirm">Sair Agora</string>
+    <string name="logout_trivia">Sair</string>
+</resources>

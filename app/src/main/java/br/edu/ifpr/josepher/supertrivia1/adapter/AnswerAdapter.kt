@@ -14,9 +14,13 @@ class AnswerAdapter () : RecyclerView.Adapter<AnswerAdapter.ViewHolder>() {
     private var alternativeSelect: Int = 0
     private var select: Boolean = false
 
-
-    override fun getItemViewType(position: Int) = R.layout.item_alternative
-
+    override fun getItemViewType(position: Int): Int {
+        return if (select && position == alternativeSelect) {
+            R.layout.item_alternative_selected
+        } else {
+            R.layout.item_alternative
+        }
+    }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
         ViewHolder(
             LayoutInflater
@@ -52,7 +56,10 @@ class AnswerAdapter () : RecyclerView.Adapter<AnswerAdapter.ViewHolder>() {
         notifyDataSetChanged()
     }
 
-    fun getAnswer(): Answer {
-        return alternatives[alternativeSelect]
+    fun getAnswer(): Answer? {
+        if (select) {
+            return alternatives[alternativeSelect]
+        }
+        return null
     }
 }

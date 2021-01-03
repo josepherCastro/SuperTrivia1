@@ -22,6 +22,9 @@
         <action
             android:id="@+id/action_mainFragment_to_playGameFragment2"
             app:destination="@id/playGameFragment2" />
+        <action
+            android:id="@+id/action_mainFragment_to_logoutFragment2"
+            app:destination="@id/logoutFragment" />
     </fragment>
     <fragment
         android:id="@+id/playGameFragment2"
@@ -41,6 +44,15 @@
         tools:layout="@layout/fragment_end_game" >
         <action
             android:id="@+id/action_endGameFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/logoutFragment"
+        android:name="br.edu.ifpr.josepher.supertrivia1.fragment.LogoutFragment"
+        android:label="fragment_logout"
+        tools:layout="@layout/fragment_logout" >
+        <action
+            android:id="@+id/action_logoutFragment2_to_mainFragment"
             app:destination="@id/mainFragment" />
     </fragment>
 </navigation>

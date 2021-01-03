@@ -10,7 +10,7 @@
         android:icon="@drawable/home"
         android:title="@string/bt_nav_home" />
     <item
-        android:id="@+id/playGameFragment"
-        android:icon="@drawable/play_game"
-        android:title="@string/bt_nav_play_game" />
+        android:id="@+id/logoutFragment"
+        android:icon="@drawable/logout"
+        android:title="@string/logout_trivia" />
 </menu>
