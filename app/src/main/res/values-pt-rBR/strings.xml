@@ -25,7 +25,7 @@
     <string name="game_running">Jogo em execução ...</string>
     <string name="error_category">ERROR - Escolha uma categoria.</string>
     <string name="game_next">Próxima</string>
-    <string name="game_finish">Fim do jogo</string>
+    <string name="game_finish">Fim do jogo!</string>
     <string name="game_correct">Correto</string>
     <string name="game_incorrect">Incorreto</string>
     <string name="game_select_alternative">Selecione a alternativa correta:</string>
@@ -41,4 +41,6 @@
     <string name="logout_trivia_info">Você está preste a desconectar-se da sua conta do App Super Trivia, tem serteza que deseja fazer isso? Se não quer fazer isso é só ir para Home. Se um dia desejar votar use seu email e senha cadastrados para seguir com o seu progresso.</string>
     <string name="logout_trivia_confirm">Sair Agora</string>
     <string name="logout_trivia">Sair</string>
+    <string name="login_not_connected">Conecte-se a internet</string>
+    <string name="login_connected_internet">Conectado a internet</string>
 </resources>

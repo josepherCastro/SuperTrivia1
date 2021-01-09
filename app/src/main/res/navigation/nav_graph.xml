@@ -33,9 +33,6 @@
         <action
             android:id="@+id/action_playGameFragment2_to_endGameFragment"
             app:destination="@id/endGameFragment" />
-        <action
-            android:id="@+id/action_playGameFragment2_to_mainFragment"
-            app:destination="@id/mainFragment" />
     </fragment>
     <fragment
         android:id="@+id/endGameFragment"

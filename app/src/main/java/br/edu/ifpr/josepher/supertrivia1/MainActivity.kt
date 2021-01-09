@@ -25,10 +25,7 @@ class MainActivity : AppCompatActivity(), ConnectivityReceiver.ConnectivityRecei
         if (sharedPref != null) {
             val email = sharedPref.getString("email", "")
             val password = sharedPref.getString("password", "")
-//            val token = sharedPref.getString("token", "")
-//            val userLogin = UserLogin(email!!, password!!)
             signIn(email!!, password!!, false)
-
         }
 
         registerReceiver(
@@ -40,7 +37,10 @@ class MainActivity : AppCompatActivity(), ConnectivityReceiver.ConnectivityRecei
         btSignIn.setOnClickListener{signIn(etxEmail.text.toString(), etxPassword.text.toString())}
     }
     private fun signUp(){
-        startActivity(Intent(this, SignUp::class.java))
+        val intent = Intent(this, SignUp::class.java)
+        intent.flags =
+                Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        startActivity(intent)
     }
     private fun signIn(email: String, password: String, verify: Boolean = false) {
         if (email.isNotEmpty() && password.isNotEmpty()) {
@@ -49,10 +49,7 @@ class MainActivity : AppCompatActivity(), ConnectivityReceiver.ConnectivityRecei
 
             try {
                 dao.login(userLogin) {
-                    Log.i("LOGIN", it.toString())
-
                     val sharedPref = this.getSharedPreferences("user", Context.MODE_PRIVATE)
-
                     if (sharedPref != null) {
                         with(sharedPref.edit()) {
                             putString("email", it.email)
@@ -61,7 +58,6 @@ class MainActivity : AppCompatActivity(), ConnectivityReceiver.ConnectivityRecei
                             commit()
                         }
                     }
-                    Log.i("LOGIN", it.toString())
                     val intent = Intent(this, Trivia::class.java)
                     intent.flags =
                             Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
@@ -84,11 +80,10 @@ class MainActivity : AppCompatActivity(), ConnectivityReceiver.ConnectivityRecei
     }
 
     private fun showNetworkMessage(isConnected: Boolean) {
-
         if (!isConnected) {
-            Toast.makeText(this,"conecte-se a internet",Toast.LENGTH_LONG).show()
+            Toast.makeText(this, R.string.login_not_connected,Toast.LENGTH_LONG).show()
         } else {
-            Toast.makeText(this,"Logando..",Toast.LENGTH_LONG).show()
+            Toast.makeText(this,R.string.login_connected_internet,Toast.LENGTH_LONG).show()
         }
     }
 }

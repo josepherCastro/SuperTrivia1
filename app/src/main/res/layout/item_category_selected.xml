@@ -4,7 +4,10 @@
     android:id="@+id/cvCategorySelected"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    app:cardBackgroundColor="@color/purple_200">
+    app:cardBackgroundColor="#6050B8"
+    app:cardCornerRadius="4dp"
+    app:cardElevation="4dp"
+    app:contentPadding="4dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -15,8 +18,9 @@
             android:layout_width="0dp"
             android:layout_height="32dp"
             android:text="TextView"
-            android:textColor="@color/black"
+            android:textColor="#1C0C39"
             android:textSize="24sp"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

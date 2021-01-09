@@ -49,22 +49,18 @@ class UserDAO {
         })
     }
     fun insert(userInput: UserInput, finished: (User) -> Unit) {
-        service.insert(userInput ).enqueue(object : Callback<UserCallback> {
+        service.insert(userInput).enqueue(object : Callback<UserCallback> {
             override fun onResponse(call: Call<UserCallback>, response: Response<UserCallback>) {
 
                 if(!response.isSuccessful){
-                    Log.e("LOGIN", response.code().toString())
+                    Log.e("register", response.code().toString())
                 }else{
                     val user = response.body()!!
-                    Log.e("LOGIN", response.code().toString())
-                    Log.e("LOGIN", user.status)
                     finished(user.data.user!!)
                 }
 
             }
             override fun onFailure(call: Call<UserCallback>, t: Throwable) {
-                Log.e("LOGIN", t.toString())
-                Log.e("LOGIN", call.toString())
             }
         })
     }

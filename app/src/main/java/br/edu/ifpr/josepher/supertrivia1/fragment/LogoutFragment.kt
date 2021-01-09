@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import br.edu.ifpr.josepher.supertrivia1.ConnectivityReceiver
+import br.edu.ifpr.josepher.supertrivia1.MainActivity
 import br.edu.ifpr.josepher.supertrivia1.R
 import kotlinx.android.synthetic.main.activity_trivia.*
 import kotlinx.android.synthetic.main.fragment_logout.view.*
@@ -16,9 +17,7 @@ class LogoutFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-
         val view = inflater.inflate(R.layout.fragment_logout, container, false)
-
         view.btLogout.setOnClickListener { logout() }
         return view
     }
@@ -29,7 +28,7 @@ class LogoutFragment : Fragment() {
         sharedPref?.edit()?.putString("password", "")?.putString("email", "")?.putString("token", "")
             ?.apply()
 
-        val intent = Intent(activity, ConnectivityReceiver::class.java)
+        val intent = Intent(activity, MainActivity::class.java)
         intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
         startActivity(intent)
     }

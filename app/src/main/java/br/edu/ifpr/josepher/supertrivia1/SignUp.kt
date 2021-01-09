@@ -1,26 +1,22 @@
 package br.edu.ifpr.josepher.supertrivia1
 
-import android.annotation.SuppressLint
 import android.app.AlertDialog
+import android.content.Context
 import android.content.Intent
-import android.content.IntentFilter
-import android.net.ConnectivityManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.widget.Button
 import android.widget.Toast
-import androidx.navigation.fragment.findNavController
 import br.edu.ifpr.josepher.supertrivia1.dao.UserDAO
 import br.edu.ifpr.josepher.supertrivia1.model.user.UserInput
 import kotlinx.android.synthetic.main.activity_sign_up.*
+import kotlinx.coroutines.delay
 
 class SignUp : AppCompatActivity(){
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_up)
 
-        btCancel.setOnClickListener { cancel() }
+        btCancel.setOnClickListener { home() }
         btSubmit.setOnClickListener {
             submit(
                 etxName.text.toString(),
@@ -28,10 +24,14 @@ class SignUp : AppCompatActivity(){
                 etxPasswordRegistry.text.toString(),
                 etxPasswordRegistryConfirmation.text.toString()
             )
+            home()
         }
     }
-    private fun cancel(){
-        startActivity(Intent(this, MainActivity::class.java))
+    private fun home(){
+        val intent = Intent(this, MainActivity::class.java)
+        intent.flags =
+                Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        startActivity(intent)
     }
 
     private fun submit(name: String, email: String, password: String, passwordConfirm: String){
@@ -43,16 +43,19 @@ class SignUp : AppCompatActivity(){
             }else{
                 val dao = UserDAO()
                 val user = UserInput(name, email, password)
-                dao.insert(user) {
-                    val build: AlertDialog.Builder = AlertDialog.Builder(this)
-                    build.setTitle(R.string.registry_success_title)
-                    build.setMessage(R.string.registry_success_msg)
+                try {
+                    dao.insert(user) {
+                        val build: AlertDialog.Builder = AlertDialog.Builder(this)
+                        build.setTitle(R.string.registry_success_title)
+                        build.setMessage(R.string.registry_success_msg)
 
-                    val alertDialog: AlertDialog = build.create()
-                    alertDialog.show()
+                        build.setPositiveButton("OK") { dialog, _ ->
+                            dialog.dismiss()
+                        }
+                    }
+                }catch (e: Exception){
+                    Toast.makeText(this, e.toString(), Toast.LENGTH_SHORT).show()
                 }
-                val intent = Intent(this, MainActivity::class.java)
-                startActivity(intent)
             }
         }
     }

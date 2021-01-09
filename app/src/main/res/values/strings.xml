@@ -24,7 +24,7 @@
     <string name="game_running">Game running…</string>
     <string name="error_category">ERROR - Choose a category.</string>
     <string name="game_next">Next</string>
-    <string name="game_finish">End game</string>
+    <string name="game_finish">End game!</string>
     <string name="game_correct">Corrected</string>
     <string name="game_incorrect">Incorrected</string>
     <string name="game_select_alternative">Select correct alternative:</string>
@@ -42,6 +42,9 @@
         If you ever wish to vote, use your registered email and password to continue with your progress.
     </string>
     <string name="logout_trivia_confirm">Logout Now</string>
+    <string name="login_not_connected">Connect to the Internet</string>
+    <string name="login_connected_internet">Connected to the internet</string>
+
 
     <string name="msg_sign_up">To play the super trivia, you must register. Sign up and good game!</string>
     <!-- TODO: Remove or change this placeholder text -->

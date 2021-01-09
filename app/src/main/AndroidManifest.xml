@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="br.edu.ifpr.josepher.supertrivia1">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -12,11 +13,12 @@
         android:roundIcon="@drawable/trivia_logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.SuperTrivia1"
-        android:usesCleartextTraffic="true">
-        <activity android:name=".Trivia"></activity>
+        android:usesCleartextTraffic="true"
+        tools:targetApi="m">
+        <activity android:name=".Trivia" />
         <activity
             android:name=".SignUp"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait">

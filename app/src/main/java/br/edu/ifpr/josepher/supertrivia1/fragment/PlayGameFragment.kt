@@ -104,7 +104,7 @@ class PlayGameFragment : Fragment() {
     }
 
     private fun nextToQuestion(token: String?, answer: Answer?) {
-
+        val bundle = Bundle()
         if (answer != null && token != null) {
 
             val build: AlertDialog.Builder = AlertDialog.Builder(activity)
@@ -114,7 +114,7 @@ class PlayGameFragment : Fragment() {
             buildII.setPositiveButton(getString(R.string.game_next)) { dialog, _ ->
 
                 daoQuestions.nextQuestion(token){
-                    val bundle = Bundle()
+
 
                     val gson = Gson()
                     val questionJson = gson.toJson(it)
@@ -131,7 +131,11 @@ class PlayGameFragment : Fragment() {
             buildII.setNegativeButton(getString(R.string.game_finish)){ dialog, _ ->
 
                 daoGAME.endGame(token){
-                    findNavController().navigate(R.id.mainFragment)
+                    val gson = Gson()
+                    val endGame = gson.toJson(it)
+                    bundle.putString("endGame", endGame)
+
+                    findNavController().navigate(R.id.endGameFragment,bundle)
                 }
                 dialog.dismiss()
             }
