@@ -37,6 +37,6 @@
 * ConstraintLayout
 * RecyclerView
 
-# Video Explicando o Codigo
+# Video Demonstrativo
 
 [SuperTrivia1 - YouTube](https://youtu.be/PnYS4RaEqfY)
