@@ -12,7 +12,7 @@
 </p>
 </br>
 
-# API - 
+# API
 
  * API usada: [Triva Server](https://super-trivia-server.herokuapp.com) .<br>
  * Código-fonte: [Triva Code](https://github.com/seccomiro/trivia-server) .<br>
